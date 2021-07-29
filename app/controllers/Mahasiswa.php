@@ -24,23 +24,26 @@ class Mahasiswa extends Controller{
 	{
 		if ( parent::model('mahasiswa_models')->tambahDataMahasiswa($_POST) > 0 ) {
 			header('location : '. URLBASE .'/mahasiswa');
-			exit;
+			//exit;
 		}
 	}
 
 	public function hapus($id)
 	{
-		if( parent::model('mahasiswa_models')->hapusDataMahasiswa($id) > 0 );
+		if( parent::model('mahasiswa_models')->hapusDataMahasiswa($id) > 0 ){
 			header('location :'. URLBASE . '/mahasiswa');
-			exit;
+			//exit;
+
+		}
 	}
 
-	public function edit($id)
+	public function edit()
 	{
-		parent::model('mahasiswa_models')->editDataMahasiswa($id);
-		header('location : '. URLBASE . '/mahasiswa');
-		exit();
-	}
+		if( parent::model('mahasiswa_models')->editDataMahasiswa($_POST) > 0 ) {
+			header('location : '. URLBASE . '/mahasiswa');
+			//exit();
 
+		}
+	}
 
 }

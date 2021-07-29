@@ -1,8 +1,9 @@
 
 <div class="accordion mt-4 col-12 container" id="accordionExample">
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMahasiswa">
-  Tambah data Mahasiswa
-</button>
+    Tambah data Mahasiswa
+  </button>
+
   <div class="accordion-item mt-3">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -15,6 +16,7 @@
           <ul>
             <li><?= $mhs['nama'] ?></li>
             <li><a href="<?= URLBASE ?>/mahasiswa/detail/<?= $mhs['id'] ?>">Detail</a></li>
+           
             <li><a href="<?= URLBASE ?>/mahasiswa/hapus/<?= $mhs['id'] ?>">Hapus</a></li>
           </ul>
         <?php endforeach; ?>
@@ -28,11 +30,12 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalLabelMahasiswa">Modal title</h5>
+        <h5 class="modal-title" id="modalLabelMahasiswa">tambah data mahasiswa</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form action="<?= URLBASE ?>/Mahasiswa/tambah" method="post">
+         
           <div class="mb-3">
             <label for="nama" class="form-label">Nama</label>
             <input type="text" class="form-control" id="nama" name="nama">
