@@ -15,6 +15,7 @@
           <ul>
             <li><?= $mhs['nama'] ?></li>
             <li><a href="<?= URLBASE ?>/mahasiswa/detail/<?= $mhs['id'] ?>">Detail</a></li>
+            <li><a href="<?= URLBASE ?>/mahasiswa/hapus/<?= $mhs['id'] ?>">Hapus</a></li>
           </ul>
         <?php endforeach; ?>
       </div>

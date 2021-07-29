@@ -23,8 +23,24 @@ class Mahasiswa extends Controller{
 	public function tambah()
 	{
 		if ( parent::model('mahasiswa_models')->tambahDataMahasiswa($_POST) > 0 ) {
-			header('location :'. URLBASE .'/Mahasiswa');
+			header('location : '. URLBASE .'/mahasiswa');
 			exit;
 		}
 	}
+
+	public function hapus($id)
+	{
+		if( parent::model('mahasiswa_models')->hapusDataMahasiswa($id) > 0 );
+			header('location :'. URLBASE . '/mahasiswa');
+			exit;
+	}
+
+	public function edit($id)
+	{
+		parent::model('mahasiswa_models')->editDataMahasiswa($id);
+		header('location : '. URLBASE . '/mahasiswa');
+		exit();
+	}
+
+
 }
